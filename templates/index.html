@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping Pong Tracker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <form class="pure-form" action = "/add" method = "POST">
+        <title> Player Name Enter </title>
+        <input type="text" name="player1Name" placeholder="Enter your name Player1">
+        <input type="text" name="player2Name" placeholder="Enter your name Player2"> 
+        <input type="text" name="initialServer" placeholder="Enter the starting server">
+        <button type="submit" class="pure-button pure-button-primary">Start Game</button>      
+    </form>    
+
+    <p> Player 1 name: {{ player1Name }} </p>
+    <p> Player 2 name: {{ player2Name }} </p>
+    <p> Player 1 points: {{ player1Points}} | Player 2 points: {{ player2Points }} </p>
+    <a href="/player1points">Player 1 add points</a>
+    <br>
+    {% if final_winner %}
+        <p> The Winner is {{final_winner}} </p>
+    {% endif %}
+    <a href="/player2points">Player 2 add points</a>
+    
+    
+</body>
+</html>
